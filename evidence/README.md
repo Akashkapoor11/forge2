@@ -1,12 +1,5 @@
 # Evidence - Forge 2 
 
-**Builder:** Akash Kapoor  
-**Repo:** https://github.com/Akashkapoor11/forge2  
-**Live URL:** https://forge2-sooty.vercel.app/  
-**Date:** 2026-07-16
-
----
-
 ## Contents
 <img width="1905" height="967" alt="Image" src="https://github.com/user-attachments/assets/ec682eb6-6c35-4e69-af1f-5d734af4a46b" />
 <img width="1902" height="1018" alt="Image" src="https://github.com/user-attachments/assets/81b6ea40-e76f-4f86-8e1f-24d37da9276a" />
