@@ -38,6 +38,10 @@ https://forge2-sooty.vercel.app
 
 ---
 
+<img width="1554" height="952" alt="Image" src="https://github.com/user-attachments/assets/c41d400b-5136-4e16-afa5-31ba87e16ed4" />
+
+<img width="1919" height="957" alt="Image" src="https://github.com/user-attachments/assets/389c5f20-1f88-4e9b-998e-f55814290bad" />
+
 ## Models used and why
 
 | Agent | Model | Provider | Rationale |
