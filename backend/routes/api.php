@@ -7,6 +7,9 @@ use App\Http\Controllers\MemberController;
 use App\Http\Controllers\TagController;
 use Illuminate\Support\Facades\Route;
 
+// Debug: test if routing works at all (no DB needed)
+Route::get('/ping', fn () => response()->json(['status' => 'ok', 'time' => now()->toIso8601String()]));
+
 Route::get('/boards', [BoardController::class, 'index']);
 Route::post('/boards', [BoardController::class, 'store']);
 Route::delete('/boards/{board}', [BoardController::class, 'destroy']);
