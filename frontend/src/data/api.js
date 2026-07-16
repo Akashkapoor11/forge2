@@ -179,9 +179,9 @@ export async function getCards(boardId) {
 export async function createCard(boardId, listId, title) {
   return apiFirst(
     () =>
-      apiFetch(`/lists/${listId}/cards`, {
+      apiFetch(`/boards/${boardId}/cards`, {
         method: "POST",
-        body: JSON.stringify({ boardId, title }),
+        body: JSON.stringify({ listId, title }),
       }),
     () => {
       const db = load();
