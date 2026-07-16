@@ -10,7 +10,7 @@ See [`ARCHITECTURE.md`](./ARCHITECTURE.md) for agent roles, Slack channel scheme
 
 ---
 
-**Live URL:** `https://forge2-sooty.vercel.app`
+**Live URL:** https://forge2-sooty.vercel.app
 
 <img width="1905" height="967" alt="Image" src="https://github.com/user-attachments/assets/ec682eb6-6c35-4e69-af1f-5d734af4a46b" />
 
