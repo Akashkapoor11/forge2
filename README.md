@@ -10,7 +10,7 @@ See [`ARCHITECTURE.md`](./ARCHITECTURE.md) for agent roles, Slack channel scheme
 
 ---
 
-**Live URL:** `https://docket-forge2.vercel.app`
+**Live URL:** `https://forge2-sooty.vercel.app`
 
 > Frontend deploys to Vercel automatically on every push to `main`. The app ships with a seeded localStorage database so you can demo it immediately — no backend setup required.
 
