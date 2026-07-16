@@ -16,8 +16,8 @@ WORKDIR /app
 # Copy backend source
 COPY . .
 
-# Install PHP dependencies (disable audit to avoid security advisory blocking)
-RUN COMPOSER_NO_AUDIT=1 composer install --no-dev --optimize-autoloader --no-interaction
+# Install PHP dependencies
+RUN composer install --no-dev --optimize-autoloader --no-interaction
 
 # Copy entrypoint
 COPY docker-entrypoint.sh /docker-entrypoint.sh
