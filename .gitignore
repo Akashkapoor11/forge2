@@ -1,0 +1,15 @@
+# Node
+node_modules/
+frontend/dist/
+frontend/.env
+
+# PHP / Laravel
+backend/vendor/
+backend/.env
+backend/database/database.sqlite
+backend/storage/*.key
+backend/bootstrap/cache/*.php
+
+# OS / editor
+.DS_Store
+*.log

@@ -1,0 +1,56 @@
+{
+  "_comment": "OpenClaw gateway config — secrets removed. Copy this to openclaw.json and set env vars from .env.example.",
+  "version": "1",
+  "model": {
+    "provider": "ollama",
+    "baseUrl": "http://localhost:11434/v1",
+    "model": "qwen2.5-coder:7b",
+    "apiKey": "ollama",
+    "maxTokens": 4096,
+    "temperature": 0.2
+  },
+  "channels": {
+    "slack": {
+      "enabled": true,
+      "mode": "socket",
+      "appToken": {
+        "source": "env",
+        "provider": "default",
+        "id": "SLACK_APP_TOKEN"
+      },
+      "botToken": {
+        "source": "env",
+        "provider": "default",
+        "id": "SLACK_BOT_TOKEN"
+      },
+      "channels": {
+        "commands": "agent-coder",
+        "log": "agent-log"
+      }
+    }
+  },
+  "workspace": {
+    "root": ".",
+    "allowedPaths": [
+      "frontend/",
+      "backend/",
+      "skills/",
+      ".github/"
+    ],
+    "shell": "bash"
+  },
+  "fallbackModels": [
+    {
+      "provider": "groq",
+      "baseUrl": "https://api.groq.com/openai/v1",
+      "model": "openai/gpt-oss-120b",
+      "apiKey": { "source": "env", "provider": "default", "id": "GROQ_API_KEY" }
+    },
+    {
+      "provider": "gemini",
+      "baseUrl": "https://generativelanguage.googleapis.com/v1beta/openai/",
+      "model": "gemini-2.5-flash",
+      "apiKey": { "source": "env", "provider": "default", "id": "GEMINI_API_KEY" }
+    }
+  ]
+}
