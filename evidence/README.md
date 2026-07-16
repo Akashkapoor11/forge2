@@ -1,19 +1,30 @@
-# evidence/
+# Evidence — Forge 2 · Edition 2 Qualifier
 
-This folder contains the screen recording walkthrough required by the qualifier handbook (§08).
+**Builder:** Akash Kapoor  
+**Repo:** https://github.com/Akashkapoor11/forge2  
+**Live URL:** https://forge2-sooty.vercel.app/  
+**Date:** 2026-07-16
 
-## evidence/walkthrough.mp4
+---
 
-A 60–90 second screen recording demonstrating:
+## Contents
 
-1. **Agent loop** (0:00–0:25): Slack open — showing `#sprint-main` with Hermes' plan, `#agent-coder` with OpenClaw's three-section report, and `#agent-log` with autonomous run messages.
-2. **Live app** (0:25–0:55): The Kanban board at the live URL — creating a card, moving it between lists by drag-and-drop, setting a due date, adding a comment, showing the overdue flag on a card past its due date and not in "Done".
-3. **Self-improve rule** (0:55–1:10): Showing `skills/self-improve/learned-rules.md` with the CI failure rule and its source commit.
-4. **CI green** (1:10–1:20): GitHub Actions run showing all three jobs (backend-tests, frontend-tests, quality-gate) passing.
+| File | Description |
+|---|---|
+| `hermes-session-1.png` | Hermes startup — model switched to NVIDIA Nemotron 550B, first message & response |
+| `hermes-session-2.png` | Hermes tool calls — git log, browser navigate to GitHub, 15+ browser clicks |
+| `hermes-session-3.png` | Hermes planning — search_files, find, read kanban.py, read kanban_db.py, git remote |
+| `hermes-session-4.png` | Final tool calls — browser navigate × 3, snapshots, rate limit hit after 47+ calls |
+| `hermes-session.txt`   | Full terminal transcript — all tool calls with timestamps |
 
-> **Note for Sprint day:** Record this with Loom, OBS, or Windows Game Bar (Win+G → Record), then commit the mp4 here. Keep it under 90 seconds — judges have 5 finalist demos to watch in 90 minutes.
+---
 
-## File naming
+## Key Evidence Points
 
-- `walkthrough.mp4` — primary recording (commit this)
-- `walkthrough_compressed.mp4` — if the original is >50 MB, compress with: `ffmpeg -i walkthrough.mp4 -vcodec libx264 -crf 28 walkthrough_compressed.mp4`
+- **Real Hermes session ID:** `20260716_170413_21ea50`
+- **Model used:** `nvidia/nemotron-3-ultra-550b-a55b:free` via OpenRouter (free tier)
+- **Tool calls made:** 47+ (ls, find, git log, git branch, read_file, browser_navigate, browser_click, browser_snapshot)
+- **Files read autonomously:** `kanban.py`, `kanban_db.py`
+- **GitHub repos browsed:** `Akashkapoor11/forge2` — backend/, frontend/ structure reviewed
+- **Context used:** 69.5K / 1M tokens
+- **Session duration:** 13+ minutes active
