@@ -42,6 +42,22 @@ function uid(prefix) {
 }
 
 // ── API helpers ───────────────────────────────────────────────────────────────
+// Convert camelCase keys → snake_case before sending to Laravel
+const KEY_MAP = {
+  listId: "list_id",
+  boardId: "board_id",
+  memberId: "member_id",
+  dueDate: "due_date",
+  tagIds: "tag_ids",
+  createdAt: "created_at",
+};
+function toSnake(obj) {
+  if (!obj || typeof obj !== "object") return obj;
+  return Object.fromEntries(
+    Object.entries(obj).map(([k, v]) => [KEY_MAP[k] ?? k, v])
+  );
+}
+
 async function apiFetch(path, options = {}) {
   const res = await fetch(`${BASE_URL}/api${path}`, {
     headers: { "Content-Type": "application/json", Accept: "application/json" },
@@ -181,7 +197,7 @@ export async function createCard(boardId, listId, title) {
     () =>
       apiFetch(`/boards/${boardId}/cards`, {
         method: "POST",
-        body: JSON.stringify({ listId, title }),
+        body: JSON.stringify(toSnake({ listId, title })),
       }),
     () => {
       const db = load();
@@ -210,7 +226,7 @@ export async function updateCard(cardId, patch) {
     () =>
       apiFetch(`/cards/${cardId}`, {
         method: "PATCH",
-        body: JSON.stringify(patch),
+        body: JSON.stringify(toSnake(patch)),
       }),
     () => {
       const db = load();
@@ -227,7 +243,7 @@ export async function moveCard(cardId, toListId, toOrder) {
     () =>
       apiFetch(`/cards/${cardId}/move`, {
         method: "PATCH",
-        body: JSON.stringify({ listId: toListId, order: toOrder }),
+        body: JSON.stringify(toSnake({ listId: toListId, order: toOrder })),
       }),
     () => {
       const db = load();
