@@ -58,13 +58,28 @@ function toSnake(obj) {
   );
 }
 
+// Convert snake_case API responses → camelCase for the frontend
+function toCamel(obj) {
+  if (Array.isArray(obj)) return obj.map(toCamel);
+  if (obj && typeof obj === "object") {
+    return Object.fromEntries(
+      Object.entries(obj).map(([k, v]) => [
+        k.replace(/_([a-z])/g, (_, c) => c.toUpperCase()),
+        toCamel(v),
+      ])
+    );
+  }
+  return obj;
+}
+
 async function apiFetch(path, options = {}) {
   const res = await fetch(`${BASE_URL}/api${path}`, {
     headers: { "Content-Type": "application/json", Accept: "application/json" },
     ...options,
   });
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
-  return res.json();
+  const data = await res.json();
+  return toCamel(data);
 }
 
 /**
