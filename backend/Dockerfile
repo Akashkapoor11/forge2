@@ -1,8 +1,10 @@
 FROM php:8.2-cli
 
-# Install system deps
+# Install system deps + PostgreSQL client
 RUN apt-get update && apt-get install -y \
     unzip curl git \
+    libpq-dev \
+    && docker-php-ext-install pdo pdo_pgsql \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Composer
@@ -16,9 +18,6 @@ COPY . .
 
 # Install PHP dependencies
 RUN composer install --no-dev --optimize-autoloader --no-interaction
-
-# Create SQLite DB file placeholder (real one is on Render disk at /var/data)
-RUN mkdir -p /var/data && touch /var/data/database.sqlite
 
 # Copy entrypoint
 COPY docker-entrypoint.sh /docker-entrypoint.sh
