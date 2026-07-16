@@ -14,6 +14,8 @@
 | `hermes-session-4.png` | Final tool calls — browser navigate × 3, snapshots, rate limit hit after 47+ calls |
 | `hermes-session.txt`   | Full terminal transcript — all tool calls with timestamps |
 
+<img width="1554" height="952" alt="Image" src="https://github.com/user-attachments/assets/7d52cbb4-d2c7-48b5-adbf-ad086cd6366d" />
+<img width="1919" height="957" alt="Image" src="https://github.com/user-attachments/assets/9cd3d6f0-cfc0-46dd-8233-6da69f419115" />
 ---
 
 ## Key Evidence Points
