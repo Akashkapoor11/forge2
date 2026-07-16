@@ -13,8 +13,8 @@ WORKDIR /app
 
 COPY . .
 
-# Install dependencies
-RUN COMPOSER_NO_AUDIT=1 composer install --no-dev --optimize-autoloader --no-interaction
+# Install dependencies (--no-scripts: skip artisan calls that need .env during build)
+RUN COMPOSER_NO_AUDIT=1 composer install --no-dev --optimize-autoloader --no-interaction --no-scripts
 
 RUN chmod -R 775 storage bootstrap/cache
 

@@ -12,6 +12,9 @@ cd /app
 # SQLite fallback
 [ "$DB_CONNECTION" = "sqlite" ] && touch database/database.sqlite
 
+# Run package discovery (skipped during build due to --no-scripts)
+php artisan package:discover --ansi 2>&1 || echo "[warn] package:discover skipped"
+
 # Run migrations
 php artisan migrate --force --no-interaction || echo "[warn] migrate failed, continuing"
 
