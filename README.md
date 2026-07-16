@@ -1,4 +1,4 @@
-# Docket — Forge 2 · Edition 2 Qualifier
+# Docket - Forge 2 
 
 A tiny Trello-style Kanban board (Laravel REST API + React/Vite UI), built end-to-end by a two-agent team:
 
