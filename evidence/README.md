@@ -1,4 +1,4 @@
-# Evidence — Forge 2 · Edition 2 Qualifier
+# Evidence - Forge 2 
 
 **Builder:** Akash Kapoor  
 **Repo:** https://github.com/Akashkapoor11/forge2  
