@@ -12,12 +12,6 @@ services:
       - key: APP_KEY
         generateValue: true
       - key: DB_CONNECTION
-        value: sqlite
-      - key: DB_DATABASE
-        value: /var/data/database.sqlite
+        value: pgsql
       - key: FRONTEND_URL
         value: https://forge2-sooty.vercel.app
-    disk:
-      name: sqlite-data
-      mountPath: /var/data
-      sizeGB: 1
